@@ -68,3 +68,11 @@ export interface ITnsOAuthOptionsSalesforce extends ITnsOAuthOptions {
     redirectUri: string;
     responseType: string;
 }
+
+export interface ITnsOAuthOptionsIdentityServer extends ITnsOAuthOptions {
+    authority?:      string;
+    clientSecret?:   string;
+    redirectUri?:    string;
+    responseType?:   string;
+    cookieDomains?:  string[];
+}

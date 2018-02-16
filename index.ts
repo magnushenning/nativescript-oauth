@@ -10,8 +10,11 @@ import { AuthHelperGoogle } from './auth-helper-google';
 import { AuthHelperUaa } from './auth-helper-uaa';
 import { AuthHelperLinkedIn } from './auth-helper-linkedin';
 import { AuthHelperSalesforce } from './auth-helper-salesforce';
+import { AuthHelperIdentityServer } from './auth-helper-identity-server';
 
 import * as TnsOAuth from './tns-oauth-interfaces';
+
+export * from './tns-oauth-interfaces';
 
 export var instance: TnsOAuth.ITnsAuthHelper = null;
 
@@ -120,6 +123,23 @@ export function initSalesforce(options: TnsOAuth.ITnsOAuthOptionsSalesforce): Pr
             resolve(instance);
         } catch (ex) {
             console.log("Error in AuthHelperSalesforce.init: " + ex);
+            reject(ex);
+        }
+    });
+}
+
+export function initIdentityServer(options: TnsOAuth.ITnsOAuthOptionsIdentityServer): Promise<any> {
+    return new Promise(function (resolve, reject) {
+        try {
+            if (instance !== null) {
+                reject("You already ran init");
+                return;
+            }
+
+            instance = new AuthHelperIdentityServer(options.clientId, options.scope, options.authority, options);
+            resolve(instance);
+        } catch (ex) {
+            console.log("Error in AuthHelperIdentityServer.init: " + ex);
             reject(ex);
         }
     });
