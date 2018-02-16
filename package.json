@@ -1,6 +1,6 @@
 {
   "name": "nativescript-oauth",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "OAuth 2 login for NativeScript.",
   "main": "index.js",
   "nativescript": {
@@ -34,7 +34,8 @@
     "Facebook",
     "Azure AD",
     "iOS",
-    "Android"
+    "Android",
+    "IdentityServer"
   ],
   "author": {
     "name": "Alexander Ziskind",
@@ -50,15 +51,16 @@
     {
       "name": "Toma Nikolov",
       "url": "https://github.com/TomaNikolov"
+    },
+    {
+      "name": "Magnus Henning",
+      "url": "https://github.com/magnushenning"
     }
   ],
   "bugs": {
     "url": "https://github.com/alexziskind1/nativescript-oauth/issues"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/alexziskind1/nativescript-oauth/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "homepage": "https://github.com/alexziskind1/nativescript-oauth",
   "readmeFilename": "README.md",
   "dependencies": {
